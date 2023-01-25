@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FootBallAwards.Detail"
+             BackgroundColor="#112B47">
+    <ContentPage.Content>
+        <StackLayout>
+            <AbsoluteLayout VerticalOptions="Start" HorizontalOptions="Center" Margin="30">
+                <Image Source="logo.png" WidthRequest="180" HeightRequest="180"></Image>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Label HorizontalOptions="Center" Margin="0,0,0,40">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="FootBall Awards" 
+                              TextColor="White" 
+                              FontSize="35" 
+                              FontAttributes="Bold"
+                        ></Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </AbsoluteLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

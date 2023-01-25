@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FootBallAwards.Master"
+             Title="Master"
+             BackgroundColor="#112B47">
+    <ContentPage.Content>
+
+        <StackLayout>
+            <AbsoluteLayout HeightRequest="100" BackgroundColor="White">
+                <Image Source="logo.png" Margin="90,0,0,0"></Image>
+            </AbsoluteLayout>
+            
+            <Button Text="Ver Jogos" 
+                    x:Name="Jogos" 
+                    ImageSource="Jogos.png"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    Clicked="Jogos_Clicked"/>
+
+            <Button Text="Votar" 
+                    x:Name="Votar" 
+                    BackgroundColor="White" 
+                    ImageSource="vote.png"
+                    Clicked="Votar_Clicked"/>
+
+                <Button Text="Ver os meus Votos" 
+                    x:Name="VerVotos" 
+                    BackgroundColor="White" 
+                    ImageSource="seevotes.png"
+                    Clicked="VerVotos_Clicked"/>
+
+                <Button Text="Definições" 
+                    x:Name="Settings" 
+                    BackgroundColor="White" 
+                    ImageSource="settings.png"
+                    Clicked="Settings_Clicked"/>
+
+                <Button Text="Logout" 
+                    x:Name="Logout" 
+                    BackgroundColor="White" 
+                    ImageSource="logout.png"
+                    Clicked="Logout_Clicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

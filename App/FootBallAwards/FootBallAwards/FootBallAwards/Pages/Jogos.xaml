@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FootBallAwards.Jogos"
+             BackgroundColor="#112B47">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Ver 11 Inicial"
+                 Order="Primary"
+                 Priority="0" 
+                 Clicked="ToolbarItem_Clicked_1" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Jogos 1º Jornada" FontSize="27" HorizontalOptions="CenterAndExpand" TextColor="#FF0000" Background="#112B47" FontAttributes="Bold"/>
+            <ListView x:Name="ListView1" HasUnevenRows="True" RowHeight="0" BackgroundColor="#112B47" ItemTapped="ListView1_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" BackgroundColor="#112B47" HorizontalOptions="Center" VerticalOptions="Start" Padding="5">
+                                <Grid BackgroundColor="#112B47">
+                                    <Label Text="{Binding data}" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding estadio}" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                </Grid>
+                                <Grid BackgroundColor="#112B47" Padding="0" HorizontalOptions="CenterAndExpand">
+                                    <Label Text="{Binding e_casa}" TextColor="White"  HorizontalOptions="StartAndExpand"/>
+                                </Grid>
+                                <Grid BackgroundColor="#112B47" Padding="0" HorizontalOptions="CenterAndExpand">
+                                    <Label Text="{Binding e_fora}" TextColor="White"  HorizontalOptions="StartAndExpand"/>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

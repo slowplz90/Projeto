@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FootBallAwards.Jogos"
+             BackgroundColor="#112B47">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Jogos 1º Jornada" FontSize="Medium" HorizontalOptions="Center" TextColor="White"/>
+                <Frame BackgroundColor="Wheat">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"></RowDefinition>
+                </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" TextColor="#112B47"></Label>
+                    <Label Grid.Row="0" Grid.Column="1" TextColor="Black">Equipas</Label>
+                    <Label Grid.Row="0" Grid.Column="2" TextColor="Black">Data</Label>
+                    <Label Grid.Row="0" Grid.Column="3" TextColor="Black">Estádio</Label>
+                    
+                </Grid>
+            </Frame>
+            <ListView x:Name="ListView1" ItemsSource="{Binding Items}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BackgroundColor="Wheat">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="20"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Label TextColor="Black" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" Text="{Binding e_casa}"></Label>
+                                    <Label TextColor="Black" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" Text="{Binding e_fora}"></Label>
+                                    <Label TextColor="Black" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" Text="{Binding data}"></Label>
+                                    <Label TextColor="Black" Grid.Row="0" Grid.Column="3" HorizontalOptions="Center" Text="{Binding estadio}"></Label>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <BoxView 
+                   HeightRequest="2"
+                   Color="Wheat" 
+                   Margin="20,0,20,30"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

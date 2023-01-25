@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FootBallAwards.DeleteAccount"
+             BackgroundColor="#112B47"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+
+    <StackLayout>
+    <AbsoluteLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label HorizontalOptions="Center" Margin="0,50,0,40">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Apagar conta" 
+                              TextColor="White" 
+                              FontSize="35" 
+                              FontAttributes="Bold"
+                        ></Span>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </AbsoluteLayout>
+
+    <Grid>
+        <Frame x:Name="InnerFrame_User"
+               Padding="3"
+               CornerRadius = "10"
+               Margin       = "10"
+               HasShadow    = "False"
+               BorderColor  = "#FF0000"
+               IsClippedToBounds="true"
+               BackgroundColor="Transparent">
+            <Entry x:Name="txtusername" Placeholder="Username" TextColor="White" PlaceholderColor="White" Margin="10,0,10,0"></Entry>
+        </Frame>
+    </Grid>
+
+    <Grid>
+        <Frame x:Name="InnerFrame_Pass"
+               Padding="3"
+               CornerRadius = "10"
+               Margin       = "10"
+               HasShadow    = "False"
+               BorderColor  = "#FF0000"
+               IsClippedToBounds="true"
+               BackgroundColor="Transparent">
+
+            <Entry x:Name="txtpassword" Placeholder="Password" IsPassword="True" TextColor="White" PlaceholderColor="White" Margin="10,0,10,0"></Entry>
+        </Frame>
+    </Grid>
+
+    <Grid>
+        <Frame x:Name="InnerFrame_ConfirmPass"
+               Padding="3"
+               CornerRadius = "10"
+               Margin       = "10"
+               HasShadow    = "False"
+               BorderColor  = "#FF0000"
+               IsClippedToBounds="true"
+               BackgroundColor="Transparent">
+
+            <Entry x:Name="txtconfirmpassword" Placeholder="Confirmar Password" IsPassword="True" TextColor="White" PlaceholderColor="White" Margin="10,0,10,0"></Entry>
+        </Frame>
+    </Grid>
+
+        <Button
+                VerticalOptions="Center"
+                Text="Apagar"
+                TextColor="White"
+                BackgroundColor="Transparent"
+                BorderColor="Red"
+                BorderWidth="1.5"
+                CornerRadius="50"
+                Margin="30,30,30,0"
+                Clicked="Button_Clicked_1"
+        ></Button>
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FootBallAwards.LoginUI"
+             BackgroundColor="#112B47">
+    <ContentPage.Content>
+        <StackLayout >
+
+            <!-- Logo do ecrã -->
+            <AbsoluteLayout VerticalOptions="Start" HorizontalOptions="Center" Margin="30">
+                <Image Source="logo.png" WidthRequest="180" HeightRequest="180"></Image>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Label HorizontalOptions="Center" Margin="0,0,0,40">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="FootBall Awards" 
+                              TextColor="White" 
+                              FontSize="35" 
+                              FontAttributes="Bold"
+                        ></Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </AbsoluteLayout>
+
+            <!-- TextBoxes para dados de login -->
+            <Grid>
+                <Frame x:Name="InnerFrame_User"
+                            Padding="3"
+                            CornerRadius = "10"
+                            Margin       = "10"
+                            HasShadow    = "False"
+                            BorderColor  = "#FF0000"
+                            IsClippedToBounds="true"
+                            BackgroundColor="Transparent">
+                    <Entry x:Name="txtusername" Placeholder="Username" TextColor="White" PlaceholderColor="White" Margin="10,0,10,0"></Entry>
+                </Frame>
+            </Grid>
+
+            <Grid>
+                <Frame x:Name="InnerFrame_Pass"
+                            Padding="3"
+                            CornerRadius = "10"
+                            Margin       = "10"
+                            HasShadow    = "False"
+                            BorderColor  = "#FF0000"
+                            IsClippedToBounds="true"
+                            BackgroundColor="Transparent">
+                    <Entry x:Name="txtpassword" Placeholder="Password" IsPassword="True" TextColor="White" PlaceholderColor="White" Margin="10,0,10,0"></Entry>
+                </Frame>
+            </Grid>
+
+            <StackLayout Orientation="Horizontal" Margin="100,0,0,0">
+                
+                <CheckBox x:Name="checkpass" Color="#FF0000" CheckedChanged="checkpass_CheckedChanged"></CheckBox>
+                <Label Text="Ver Password" TextColor="White" FontSize="20">
+
+                </Label>
+            </StackLayout>
+            
+            <!-- Botão de Login -->
+            <Button
+                VerticalOptions="Center"
+                Text="Login"
+                TextColor="White"
+                BackgroundColor="Transparent"
+                BorderColor="Red"
+                BorderWidth="1.5"
+                CornerRadius="50"
+                Clicked="Button_Clicked"
+                Margin="30,30,30,0"
+                ></Button>
+
+            <!-- Labels de "registro" caso não tenha conta -->
+            <Label HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Não tem conta?" TextColor="White"></Span>
+                        <Span Text=" Registe-se" 
+                              TextColor="Red" 
+                              TextDecorations="Underline" 
+                              FontAttributes="Bold"
+                        ></Span>
+                    </FormattedString>
+                </Label.FormattedText>
+                
+                <Label.GestureRecognizers>
+                    <!-- Evento que "ativa" o código associado a label de registro-->
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/> 
+                </Label.GestureRecognizers>
+            </Label>
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>  

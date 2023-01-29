@@ -32,22 +32,6 @@ namespace FootBallAwards
         public async void LoginAsync(string username, string password)
         {
             var token = string.Empty;
-                /*    try
-                    {
-                        var KeyValues = new List<KeyValuePair<string, string>>
-                         {
-                             new KeyValuePair<string, string>("userName", username),
-                             new KeyValuePair<string, string>("password", password),
-                         };
-
-
-
-                         request.Content = new FormUrlEncodedContent(KeyValues);
-                    }
-                    catch (Exception ex)
-                    {
-
-                    }*/
 
                 var request = new HttpRequestMessage(HttpMethod.Post, Url);
 

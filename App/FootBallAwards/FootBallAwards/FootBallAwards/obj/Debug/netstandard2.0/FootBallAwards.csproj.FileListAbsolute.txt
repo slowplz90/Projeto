@@ -73,3 +73,4 @@ C:\Users\diogcarvalho\Desktop\Projeto\App\FootBallAwards\FootBallAwards\FootBall
 C:\Users\diogcarvalho\Desktop\Projeto\App\FootBallAwards\FootBallAwards\FootBallAwards\obj\Debug\netstandard2.0\refint\FootBallAwards.dll
 C:\Users\diogcarvalho\Desktop\Projeto\App\FootBallAwards\FootBallAwards\FootBallAwards\obj\Debug\netstandard2.0\FootBallAwards.pdb
 C:\Users\diogcarvalho\Desktop\Projeto\App\FootBallAwards\FootBallAwards\FootBallAwards\obj\Debug\netstandard2.0\ref\FootBallAwards.dll
+C:\Users\diogcarvalho\Desktop\Projeto\App\FootBallAwards\FootBallAwards\FootBallAwards\obj\Debug\netstandard2.0\Pages\onzeInicial.xaml.g.cs

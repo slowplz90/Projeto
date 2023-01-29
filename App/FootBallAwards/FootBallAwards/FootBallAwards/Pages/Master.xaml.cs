@@ -38,11 +38,5 @@ namespace FootBallAwards
             App.MDPage.IsPresented = false;
             await Navigation.PushAsync(new Jogos());
         }
-
-        private async void Votar_Clicked(object sender, EventArgs e)
-        {
-            App.MDPage.IsPresented = false;
-            await Navigation.PushAsync(new Votar());
-        }
     }
 }

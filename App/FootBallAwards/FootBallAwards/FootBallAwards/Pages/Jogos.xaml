@@ -12,7 +12,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Jogos 1º Jornada" FontSize="27" HorizontalOptions="CenterAndExpand" TextColor="#FF0000" Background="#112B47" FontAttributes="Bold"/>
-            <ListView x:Name="ListView1" HasUnevenRows="True" RowHeight="0" BackgroundColor="#112B47" ItemTapped="ListView1_ItemTapped">
+            <ListView x:Name="ListView1" HasUnevenRows="True" RowHeight="0" BackgroundColor="#112B47" ItemTapped="ListView1_ItemTapped" ItemsSource="{Binding Items}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

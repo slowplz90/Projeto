@@ -42,7 +42,7 @@ namespace ApiAutenticação.Controllers
             using (SqlConnection con = new SqlConnection(_config.GetConnectionString("DBCon").ToString()))
             {
                 con.Open();
-                using (SqlCommand cmd = new SqlCommand("SELECT equipa_casa, equipa_fora, data, estadio FROM jogos", con))
+                using (SqlCommand cmd = new SqlCommand("SELECT id, equipa_casa, equipa_fora, data, estadio FROM jogos", con))
                 {
                     reader = cmd.ExecuteReader();
 
@@ -50,18 +50,18 @@ namespace ApiAutenticação.Controllers
                     {
                         while (reader.Read())
                         {
-                            jogos.e_casa = reader.GetString(0);
-                            jogos.e_fora = reader.GetString(1);
-                            jogos.data = reader.GetString(2);
-                            jogos.estadio = reader.GetString(3);
+                            jogos.id = reader.GetInt32(0);
+                            jogos.e_casa = reader.GetString(1);
+                            jogos.e_fora = reader.GetString(2);
+                            jogos.data = reader.GetString(3);
+                            jogos.estadio = reader.GetString(4);
 
-                            gamesList.Add(new jogos { e_casa = reader.GetString(0), e_fora = reader.GetString(1), data = reader.GetString(2), estadio = reader.GetString(3) });
+                            gamesList.Add(new jogos { id = reader.GetInt32(0) ,e_casa = reader.GetString(1), e_fora = reader.GetString(2), data = reader.GetString(3), estadio = reader.GetString(4) });
                         }
                     }
                     else
                     {
                         Console.WriteLine("No rows found.");
-                        gamesList.Add(new jogos { e_casa = "N/A", e_fora = "N/A", data = "N/A", estadio = "N/A" });
                     }
                     reader.Close();
                 }

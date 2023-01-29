@@ -40,6 +40,7 @@ namespace ApiAutenticação.Controllers
 
 
         [HttpGet("selectEquipa")]
+
         public async Task<ActionResult<List<Equipa>>> LoadEquipa(Equipa request)
         {
             SqlDataReader reader;

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FootBallAwards.Pages.onzeInicial"
+             BackgroundColor="#112B47">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackLayout Grid.Column="0">
+            <Label Text="Equipa da Casa" TextColor="White" HorizontalOptions="Center" FontSize="25"></Label>
+            <Label></Label>
+            <ListView x:Name="HomeTeamListView" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center"
+            ItemsSource="{Binding HomeTeamPlayers}" SeparatorColor="White">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                  <ViewCell>
+                    <StackLayout>
+                      <Label Text="{Binding nome}" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center"/>
+                      <Label Text="{Binding num}" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    </StackLayout>
+                  </ViewCell>
+                </DataTemplate>
+             </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+        <StackLayout Grid.Column="1">
+            <Label Text="Equipa Visitante" TextColor="White" HorizontalOptions="Center" FontSize="25"></Label>
+            <Label></Label>
+            <ListView x:Name="AwayTeamListView" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"
+            ItemsSource="{Binding AwayTeamPlayers}" SeparatorColor="White">
+             <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding nome}" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Label Text="{Binding num}" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+             </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </Grid>
+</ContentPage>

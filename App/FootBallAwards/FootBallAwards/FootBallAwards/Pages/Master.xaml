@@ -10,7 +10,7 @@
             <AbsoluteLayout HeightRequest="100" BackgroundColor="White">
                 <Image Source="logo.png" Margin="90,0,0,0"></Image>
             </AbsoluteLayout>
-            
+
             <Button Text="Ver Jogos" 
                     x:Name="Jogos" 
                     ImageSource="Jogos.png"
@@ -18,13 +18,7 @@
                     TextColor="Black"
                     Clicked="Jogos_Clicked"/>
 
-            <Button Text="Votar" 
-                    x:Name="Votar" 
-                    BackgroundColor="White" 
-                    ImageSource="vote.png"
-                    Clicked="Votar_Clicked"/>
-
-                <Button Text="Ver os meus Votos" 
+            <Button Text="Ver os meus Votos" 
                     x:Name="VerVotos" 
                     BackgroundColor="White" 
                     ImageSource="seevotes.png"

@@ -8,6 +8,7 @@ namespace ApiAutenticação.Controllers
         public class JogadorController 
     {
         public static jogador jogador = new jogador();
+        public static jogadores jogadores = new jogadores();
         private readonly IConfiguration _config;
 
         public JogadorController(IConfiguration config)
@@ -37,10 +38,10 @@ namespace ApiAutenticação.Controllers
 
 
         [HttpGet("selectJogador")]
-        public async Task<ActionResult<List<jogador>>> LoadJogador(jogador request)
+        public async Task<ActionResult<List<jogadores>>> LoadJogador(jogadores request)
         {
             SqlDataReader reader;
-            List<jogador> playersList = new List<jogador>();
+            List<jogadores> playersList = new List<jogadores>();
             using (SqlConnection con = new SqlConnection(_config.GetConnectionString("DBCon").ToString()))
             {
                 con.Open();
@@ -52,14 +53,14 @@ namespace ApiAutenticação.Controllers
                     {
                         while (reader.Read())
                         {
-                            jogador.id = reader.GetInt32(0);
-                            jogador.nome = reader.GetString(1);
-                            jogador.idade = reader.GetInt32(2);
-                            jogador.equipa = reader.GetString(3);
-                            jogador.nacionalidade = reader.GetString(4);
-                            jogador.num = reader.GetInt32(5);
+                            jogadores.id = reader.GetInt32(0);
+                            jogadores.nome = reader.GetString(1);
+                            jogadores.idade = reader.GetInt32(2);
+                            jogadores.equipa = reader.GetString(3);
+                            jogadores.nacionalidade = reader.GetString(4);
+                            jogadores.num = reader.GetInt32(5);
 
-                            playersList.Add(new jogador { id = reader.GetInt32(0), nome = reader.GetString(1), idade = reader.GetInt32(2), equipa = reader.GetString(3), nacionalidade = reader.GetString(4), num = reader.GetInt32(5) });
+                            playersList.Add(new jogadores { id = reader.GetInt32(0), nome = reader.GetString(1), idade = reader.GetInt32(2), equipa = reader.GetString(3), nacionalidade = reader.GetString(4), num = reader.GetInt32(5) });
                         }
                     }
                     else
@@ -73,10 +74,10 @@ namespace ApiAutenticação.Controllers
         }
 
         [HttpGet("selectJogadorEquipa")]
-        public async Task<ActionResult<List<jogador>>> LoadJogadorEquipa(JogEquipa request)
+        public async Task<ActionResult<List<jogadores>>> LoadJogadorEquipa(JogEquipa request)
         {
             SqlDataReader reader;
-            List<jogador> playersList = new List<jogador>();
+            List<jogadores> playersList = new List<jogadores>();
             using (SqlConnection con = new SqlConnection(_config.GetConnectionString("DBCon").ToString()))
             {
                 con.Open();
@@ -88,14 +89,14 @@ namespace ApiAutenticação.Controllers
                     {
                         while (reader.Read())
                         {
-                            jogador.id = reader.GetInt32(0);
-                            jogador.nome = reader.GetString(1);
-                            jogador.idade = reader.GetInt32(2);
-                            jogador.equipa = reader.GetString(3);
-                            jogador.nacionalidade = reader.GetString(4);
-                            jogador.num = reader.GetInt32(5);
+                            jogadores.id = reader.GetInt32(0);
+                            jogadores.nome = reader.GetString(1);
+                            jogadores.idade = reader.GetInt32(2);
+                            jogadores.equipa = reader.GetString(3);
+                            jogadores.nacionalidade = reader.GetString(4);
+                            jogadores.num = reader.GetInt32(5);
 
-                            playersList.Add(new jogador { id = reader.GetInt32(0), nome = reader.GetString(1), idade = reader.GetInt32(2), equipa = reader.GetString(3), nacionalidade = reader.GetString(4), num = reader.GetInt32(5) });
+                            playersList.Add(new jogadores { id = reader.GetInt32(0), nome = reader.GetString(1), idade = reader.GetInt32(2), equipa = reader.GetString(3), nacionalidade = reader.GetString(4), num = reader.GetInt32(5) });
                         }
                     }
                     else

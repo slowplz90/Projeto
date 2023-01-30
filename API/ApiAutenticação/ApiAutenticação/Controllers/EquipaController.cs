@@ -9,8 +9,9 @@ using System.Data;
 using System.Data.Common;
 using System.IdentityModel.Tokens.Jwt;
 
-namespace ApiAutenticação.Controllers
+namespace ApiAutenticação.Controllers 
 {
+
     public class EquipaController
     {
 

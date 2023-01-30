@@ -10,6 +10,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text.Json.Serialization;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace ApiAutenticação.Controllers
 {
@@ -24,7 +25,7 @@ namespace ApiAutenticação.Controllers
         {
             _config = config;
         }
-        
+
         [HttpPost("registo")]
         public async Task<ActionResult<User>> Registo(UserDTO request)
         {
@@ -67,6 +68,26 @@ namespace ApiAutenticação.Controllers
                 return BadRequest("Dados Inválidos");
             }
 
+        }
+
+        [HttpGet("userid")]
+        public async Task<ActionResult<int>> GetUserId(string username)
+        {
+            SqlConnection con = new SqlConnection(_config.GetConnectionString("DBCon").ToString());
+            con.Open();
+            SqlDataAdapter da = new SqlDataAdapter("SELECT Id FROM users WHERE username = '" + username + "'", con);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                int userId = Convert.ToInt32(ds.Tables[0].Rows[0]["Id"]);
+                con.Close();
+                return Ok(userId);
+            }
+            else
+            {
+                return BadRequest("Username não encontrado");
+            }
         }
 
         private string CriarToken(User user) 

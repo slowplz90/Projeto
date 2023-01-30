@@ -5,7 +5,7 @@ using Microsoft.Data.SqlClient;
 
 namespace ApiAutenticação.Controllers
 {
-        public class JogadorController 
+    public class JogadorController 
     {
         public static jogador jogador = new jogador();
         public static jogadores jogadores = new jogadores();

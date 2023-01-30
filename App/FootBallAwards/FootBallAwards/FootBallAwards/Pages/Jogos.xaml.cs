@@ -32,7 +32,7 @@ namespace FootBallAwards
 
         public List<jogos> Items;
         public jogos selectedItem;
-
+        JogoID jogo = new JogoID();
 
         public Jogos()
         {
@@ -77,6 +77,7 @@ namespace FootBallAwards
             {
                 string e_casa = selectedItem.e_casa;
                 string e_fora = selectedItem.e_fora;
+                JogoID.jogoID = selectedItem.id;
 
                 var homeTeamPlayers = await GetHomeTeamPlayers(e_casa);
                 var awayTeamPlayers = await GetAwayTeamPlayers(e_fora);
@@ -88,22 +89,6 @@ namespace FootBallAwards
             {
                 DisplayAlert("Erro", "Nenhum item selecionado", "Ok");
             }
-
-            /* foreach (var item in Items)
-             {
-                 if (item != null)
-                 {
-                     string e_casa = item.e_casa;
-                     string e_fora = item.e_fora;
-
-                     var homeTeamPlayers = await GetHomeTeamPlayers(e_casa);
-                     var awayTeamPlayers = await GetAwayTeamPlayers(e_fora);
-                 }
-                 else
-                 {
-                     DisplayAlert("Erro", "Erro ao carregar dados", "Ok");
-                 }
-             }*/
         }
 
         private async Task<List<Jogador>> GetHomeTeamPlayers(string homeTeam)

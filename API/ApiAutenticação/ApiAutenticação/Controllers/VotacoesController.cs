@@ -5,8 +5,9 @@ using Microsoft.Data.SqlClient;
 
 namespace ApiAutenticação.Controllers
 {
-
-    public class VotacoesController
+    [Route("api/[controller]")]
+    [ApiController]
+    public class VotacoesController : Controller
     {
 
         public static Votacoes votacoes = new Votacoes();
@@ -18,28 +19,39 @@ namespace ApiAutenticação.Controllers
         }
 
         [HttpPost("inserirVotacoes")]
-        public async Task<ActionResult<Votacoes>> RegistoVotacoes(Votacoes request)
+        public async Task<ActionResult<Votacoes>> InserirVotacoes(Votacoes request)
         {
-            votacoes.nome_jogador = request.nome_jogador;
-            votacoes.id_user = request.id_user;
-            votacoes.id_jogo = request.id_jogo;
+                votacoes.id_user = request.id_user;
+                votacoes.id_jogo = request.id_jogo;
+                votacoes.nome_jogador = request.nome_jogador;
 
-            SqlConnection con = new SqlConnection(_config.GetConnectionString("DBCon").ToString());
-            SqlCommand cmd = new SqlCommand("INSERT INTO Votacoes(nome_jogador,id_user,id_jogo) VALUES('" + votacoes.nome_jogador + "','" + votacoes.id_user + "','" + votacoes.id_jogo + "')", con);
-            con.Open();
-            int i = cmd.ExecuteNonQuery();
-            con.Close();
+                SqlConnection con = new SqlConnection(_config.GetConnectionString("DBCon").ToString());
+                SqlCommand cmd = new SqlCommand("INSERT INTO votacoes(id_user,id_jogo,nome_jogador) VALUES('" + votacoes.id_user + "','" + votacoes.id_jogo + "','" + votacoes.nome_jogador + "')", con);
+                con.Open();
+                int i = cmd.ExecuteNonQuery();
+                con.Close();
 
-            return votacoes;
+                return votacoes;
         }
 
-        /* 
-         [HttpPost("selectVotacoes")]
-         public async Task<ActionResult<Votacoes>> SelectVotacoes(Votacoes request)
-         {
-             SqlConnection con = new SqlConnection(_config.GetConnectionString("DBCon").ToString());
-             SqlCommand votacoes = new SqlCommand("SELECT * FROM votacoes", con);
-             return votacoes;
-         } */
+        [HttpGet("verificarVotacao")]
+        public async Task<ActionResult<bool>> VerificarVotacao(int id_user, int id_jogo)
+        {
+            SqlConnection con = new SqlConnection(_config.GetConnectionString("DBCon").ToString());
+            SqlCommand cmd = new SqlCommand("SELECT id_user, id_jogo, nome_jogador FROM Votacoes WHERE id_user='" + id_user + "' AND id_jogo='" + id_jogo + "'", con);
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                con.Close();
+                return true;
+            }
+            else
+            {
+                con.Close();
+                return false;
+            }
+        }
+
     }
 }

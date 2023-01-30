@@ -1,5 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using ApiAutenticação.Models;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 
 var builder = WebApplication.CreateBuilder(args);
 

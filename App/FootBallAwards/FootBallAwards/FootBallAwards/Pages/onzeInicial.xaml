@@ -4,7 +4,14 @@
              x:Class="FootBallAwards.Pages.onzeInicial"
              BackgroundColor="#112B47">
 
-    <Grid>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Votar"
+                 Order="Primary"
+                 Priority="0" 
+                 Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+      <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>

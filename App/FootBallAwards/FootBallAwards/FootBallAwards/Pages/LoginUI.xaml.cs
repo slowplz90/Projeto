@@ -65,11 +65,35 @@ namespace FootBallAwards
                 }
         }
 
+        private async Task<int> GetUserId(string username)
+        {
+            using (var client = new HttpClient())
+            {
+                var response = await client.GetAsync("http://10.0.2.2:5222/api/Auth/userid?username=" + username);
+                if (response.IsSuccessStatusCode)
+                {
+                    var userIdString = await response.Content.ReadAsStringAsync();
+                    int userId = int.Parse(userIdString);
+                    // Use userId as needed
+                    return userId;
+                }
+                else
+                {
+                    // Handle error
+                    return 0;
+                }
+
+            }
+        }
+
         //Código do botão de Login
         private async void Button_Clicked(object sender, EventArgs e)
         {
             LoginAsync(txtusername.Text, txtpassword.Text);
-             
+            var userId = await GetUserId(txtusername.Text);
+            UserID UserId = new UserID();
+
+            UserID.UserId = userId;
         }
 
         //Código da "label" de registro

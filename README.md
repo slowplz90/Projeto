@@ -1,0 +1,1 @@
+Este projeto teve como objetivo principal, o desenvolvimento de software, abrangendo a criação de uma aplicação funcional, a implementação de uma API e a experiência prática com uma plataforma de gerenciamento de backlogs (Azure Dev Ops).
